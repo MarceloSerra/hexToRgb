@@ -1,0 +1,44 @@
+
+<script>
+//build method to convert hex to rgb
+//build method to convert rgb to hex
+//using str.slice
+//using str.length
+// parseInt(hex, 16) - convert from HEX to INT
+//toString(16) - convert from INT to HEX
+
+
+var hex = "FDE2E2";
+
+function hexToRgb(hex){
+var converter = [hex.slice(0, 2), hex.slice(2, 4), hex.slice(4, 6)]; //definir os intervalos para corte (FF, FF, FF)
+var keep = [];
+var i = 0;
+
+for (converted of converter){ // estrutura para percorrer cada elemento do vetor
+    keep[i] = parseInt(converted, 16); // estrutura para converter o valor cortado e armazenar o mesmo na posicao do vetor
+    i++; //contador
+}
+console.log(keep.join()); //utilizar .join() no vetor para exibir os elementos do vetor juntos
+}
+
+
+var rgb = "255255255";
+
+function rgbToHex(rgb){
+var converter =  [parseInt(rgb.slice(0,3)), parseInt(rgb.slice(3,6)), parseInt(rgb.slice(6,9))];
+var keep = [];
+var i = 0;
+
+for (converted of converter){
+    keep[i] = converted.toString(16);
+    i++;
+}
+return keep; //ira retornar um vetor carregado com os valores em cada posicao
+}
+
+console.log(rgbToHex(rgb).join(""));
+
+
+
+</script>
